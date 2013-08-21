@@ -26,16 +26,8 @@ Copyright (C) 2013, DCS.
         android:minSdkVersion="8"
         android:targetSdkVersion="17" />
 
-    <uses-permission android:name="android.permission.INTERNET" />
-
-    <application
-        android:allowBackup="true"
-        android:icon="@drawable/ic_launcher"
-        android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
-        <activity
-            android:name="com.dcs.fakecurrencydetector.MainActivity"
-            android:label="@string/app_name" >
+    <uses-permission android:name="android.permission.INTERNET" /><application android:allowBackup="true" android:icon="@drawable/ic_launcher_icon" android:label="@string/app_name" android:theme="@style/AppBaseTheme" android:description="@string/app_name" android:debuggable="false" android:supportsRtl="false" android:hardwareAccelerated="true" android:allowClearUserData="true" android:uiOptions="splitActionBarWhenNarrow" android:vmSafeMode="true" android:testOnly="false">
+        <activity android:name="com.dcs.fakecurrencydetector.MainActivity" android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

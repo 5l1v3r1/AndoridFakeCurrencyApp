@@ -33,9 +33,12 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import android.app.Activity;
+import android.app.Dialog;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -98,10 +101,10 @@ public class MainActivity extends Activity implements OnClickListener {
 		boolean found = foundInFakeNotesStore(serialPrefix, noteValue);
 		if (found) {
 			resultView.setTextColor(Color.RED);
-			resultView.setText("Found in fake note series");
+			resultView.setText(R.string.search_result_found);
 		} else {
 			resultView.setTextColor(Color.rgb(0x33, 0x66, 0x00));
-			resultView.setText("Not found in fake note series");
+			resultView.setText(R.string.search_result_notfound);
 		}
 
 	}
@@ -180,5 +183,48 @@ public class MainActivity extends Activity implements OnClickListener {
 	 */
 	private String readText(EditText input) {
 		return input.getText().toString();
+	}
+	
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+	    // Handle item selection
+	    switch (item.getItemId()) {
+	        case R.id.action_exit:
+	        	finish();
+	            return true;
+	        case R.id.action_settings:
+	            //showSettings();
+	            return true;
+	        case R.id.action_about:
+	            showHelp();
+	            return true;
+	        case R.id.action_update:
+	            //showUpdate();
+	            return true;
+	        default:
+	            return super.onOptionsItemSelected(item);
+	    }
+	}
+	
+	public void AppExit()
+	{
+
+	    this.finish();
+	    Intent intent = new Intent(Intent.ACTION_MAIN);
+	    intent.addCategory(Intent.CATEGORY_HOME);
+	    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+	    startActivity(intent);
+
+	    /*int pid = android.os.Process.myPid();=====> use this if you want to kill your activity. But its not a good one to do.
+	    android.os.Process.killProcess(pid);*/
+
+	}
+	
+	public void showHelp(){
+		
+		Dialog dialog = new Dialog(MainActivity.this);
+		dialog.setTitle(R.string.action_about);		
+		dialog.setContentView(R.layout.dialog);
+		dialog.show();			
 	}
 }

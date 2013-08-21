@@ -41,19 +41,19 @@
             <RadioButton
                 android:id="@+id/radio0"
                 android:checked="true"
-                android:text="1000" />
+                android:text="@string/note_value_1000" />
 
             <RadioButton
                 android:id="@+id/radio1"
-                android:text="500" />
+                android:text="@string/note_value_500" />
 
             <RadioButton
                 android:id="@+id/radio2"
-                android:text="100" />
+                android:text="@string/note_value_100" />
 
             <RadioButton
                 android:id="@+id/radio3"
-                android:text="50" />
+                android:text="@string/note_value_50" />
         </RadioGroup>
     </TableRow>
 
@@ -65,7 +65,9 @@
         <Button
             android:id="@+id/button1"
             style="?android:attr/buttonStyleSmall"
-            android:text="Search" />
+            android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"                            
+            android:text="@string/search_button" />
     </TableRow>
 
     <TableRow
@@ -78,8 +80,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:textSize="18dp"
+            android:textSize="18sp"
             android:textStyle="bold" />
     </TableRow>
 
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/copyright_note"
+        android:textAppearance="?android:attr/textAppearanceSmall" />  
 </TableLayout>

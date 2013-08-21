@@ -4,6 +4,25 @@
         android:id="@+id/action_settings"
         android:orderInCategory="100"
         android:showAsAction="never"
+        android:icon="@drawable/ic_menu_settings"        
         android:title="@string/action_settings"/>
+    <item
+        android:id="@+id/action_update"
+        android:orderInCategory="200"
+        android:showAsAction="never"
+        android:icon="@drawable/ic_menu_update"
+        android:title="@string/action_update"/>
+    <item
+        android:id="@+id/action_about"
+        android:orderInCategory="300"
+        android:showAsAction="never" 
+        android:icon="@drawable/ic_menu_about"       
+        android:title="@string/action_about"/>
+    <item
+        android:id="@+id/action_exit"
+        android:orderInCategory="400"
+        android:showAsAction="never"
+        android:icon="@drawable/ic_menu_exit"
+        android:title="@string/action_exit"/>
 
 </menu>
